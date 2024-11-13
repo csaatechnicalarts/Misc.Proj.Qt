@@ -17,3 +17,5 @@ A personal repo for learning more about Qt and for mashing up code and ideas tak
 In a Linux console, here is how to run the application *piped* with a test input file. The text file, *test00_input.txt*, contains a line encoding the *N* and *Q* parameters, then a series of HRML statements, followed by a series of queries -- essentially, the sample input show above. The program *Attribute_Parser* returns the exact same output as the example shown above as well.
 
 `$> cat test00_input.txt | ./Attribute_Parser`
+
+See the ![test](https://github.com/csaatechnicalarts/Misc.Proj.Qt/tree/main/test) directory for a collection of test inputs and expected outputs.
