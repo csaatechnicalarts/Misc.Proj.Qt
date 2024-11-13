@@ -3,16 +3,17 @@ A personal repo for learning more about Qt and for mashing up code and ideas tak
 
 ## Attribute Parser (Qt, C++)
 
-<ins>Brief</ins>: Parse a custom-made markup language called *HRML* and run queries on it. Much like HTML, each element is bracketed by a start- and end-tag, with attributes embedded in each tag. Given a markup stream consisting of *N* lines, our program processes *Q* queries about an attribute of an HRML element. See this [PDF](docs/HR_AP_challenge.pdf) for the original coding challenge.
+<ins>Project Brief</ins>: Parse a custom-made markup language called *HRML* and run queries on it. Much like HTML, each element is bracketed by a start- and end-tag, with attributes embedded in each tag. Given a markup stream consisting of *N* lines, our program processes *Q* queries about the attributes of the given HRML element. See this [PDF](docs/HR_AP_challenge.pdf) for the original coding challenge.
 
-<ins>Usage</ins>: Here is a simple input and output of the console version of this application.
+<ins>Console Usage</ins>: Here is a simple input and output of the command line version of this application.
 
-###Sample Input###
+### Sample Input ###
+
 ![](docs/AttributeParser_Img01-640px.jpg)
 
-###Sample Output###
+### Sample Output ###
 ![](docs/AttributeParser_Img02-640px.jpg)
 
-In a Linux console, here is how to run the application with a test input file.
+In a Linux console, here is how to run the application *piped* with a test input file. The text file, *test00_input.txt*, contains a line encoding the *N* and *Q* parameters, then a series of HRML statements, followed by a series of queries -- essentially, the sample input show above. The program *Attribute_Parser* returns the exact same output as the example shown above as well.
 
-`$> cat 03_test00_input.txt | ./03_Attribute_Parser`
+`$> cat test00_input.txt | ./Attribute_Parser`
