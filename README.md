@@ -18,4 +18,4 @@ In a Linux console, here is how to run the application *piped* with a test input
 
 `$> cat test00_input.txt | ./Attribute_Parser`
 
-See the ![test](https://github.com/csaatechnicalarts/Misc.Proj.Qt/tree/main/test) directory for a collection of test inputs and expected outputs.
+See the [test](https://github.com/csaatechnicalarts/Misc.Proj.Qt/tree/main/test) directory for a collection of test inputs and expected outputs.
