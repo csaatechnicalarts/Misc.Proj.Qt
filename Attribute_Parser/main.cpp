@@ -11,7 +11,15 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     ap::AttributeParser* ap_ptr = ap::AttributeParser::getInstance();
-    ap_ptr->GetParams();
+    try {
+        ap_ptr->GetParams();
+    } catch(const std::length_error& le_err) {
+        qWarning() << le_err.what();
+        qWarning() << "Aborting!";
+
+        return -1;
+    }
+
     ap_ptr->ParseHRML();
     //ap_ptr->GetInfo();
     ap_ptr->ParseQueries();

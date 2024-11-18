@@ -3,6 +3,14 @@
 #include <regex>
 #include <QDebug>
 
+const int N_LOWER_BOUND = 1;
+const int N_UPPER_BOUND = 20;
+
+const int Q_LOWER_BOUND = 1;
+const int Q_UPPER_BOUND = 20;
+
+const int SOURCE_UPPER_BOUND = 200;
+
 void ap::AttributeParser::GetInfo()
 {
     for(const TagNode& x: m_vecTagNode) {
@@ -26,6 +34,10 @@ void ap::AttributeParser::ParseHRML()
     for (int i = 0; i < m_lines; ++i) {
         TagNode tn{};
         tok = m_console->readLine().toStdString();
+        if(tok.size() > SOURCE_UPPER_BOUND) {
+            throw std::length_error("HRML source length (" + std::to_string(tok.size()) + ") exceeds " +
+                std::to_string(SOURCE_UPPER_BOUND) + " character limit.");
+        }
 
         if (tok[1] != '/') {
             // Discard the leading '<' and trailing '>'
@@ -79,6 +91,12 @@ void ap::AttributeParser::GetParams()
     param = m_console->readLine();
     m_ssparams.str(param.toStdString());
     m_ssparams >> m_lines >> m_queries;
+
+    if (m_lines < N_LOWER_BOUND || m_lines > N_UPPER_BOUND)
+        throw std::length_error("Bad N param: N should be gte 1; N should be lte 20.");
+
+    if (m_queries < Q_LOWER_BOUND || m_queries > Q_UPPER_BOUND)
+        throw std::length_error("Bad Q param: Q should be gte 1; Q should be lte 20.");
 }
 
 void ap::AttributeParser::ParseQueries() {
@@ -93,6 +111,10 @@ void ap::AttributeParser::ParseQueries() {
     for(int i = 0; i < m_queries; ++i) {
         tagMatch = attribMatch = false;
         query = m_console->readLine().toStdString();
+        if(query.size() > SOURCE_UPPER_BOUND) {
+            throw std::length_error("Query source length (" + std::to_string(query.size()) + ") exceeds " +
+                std::to_string(SOURCE_UPPER_BOUND) + " character limit.");
+        }
 
         if (std::regex_search(query, m_q, regex_query)) {
             // Disregard leading '.'
