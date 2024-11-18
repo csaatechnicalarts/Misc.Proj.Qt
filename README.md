@@ -3,7 +3,7 @@ A personal repo for learning more about Qt and for mashing up code and ideas tak
 
 ## Attribute Parser (Qt, C++)
 
-<ins>Project Brief</ins>: Parse a custom-made markup language called *HRML* and run queries on it. Much like HTML, each element is bracketed by a start- and end-tag, with attributes embedded in each tag. Given a markup stream consisting of *N* lines, our program processes *Q* queries about the attributes of the given HRML element. See this [PDF](Attribute_Parser/docs/HR_AP_challenge.pdf) for the original coding challenge.
+<ins>Project Brief</ins>: Parse a custom-made markup language called *HRML* and run queries on it. Much like HTML, each element is bracketed by a start- and end-tag, with attributes embedded in each tag. Given a markup stream consisting of *N* lines, our program processes *Q* queries about the attributes of the given HRML element. This project was inspired by a HackerRank challenge. See this [PDF](Attribute_Parser/docs/HR_AP_challenge.pdf) for the original specs.
 
 <ins>Console Usage</ins>: Here is a simple input and output of the command line version of this application.
 
